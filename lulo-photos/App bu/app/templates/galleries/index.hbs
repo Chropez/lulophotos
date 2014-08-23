@@ -1,0 +1,17 @@
+<h2>Gallery</h2>
+<div>
+	<h2>{{model.title}}</h2>
+</div>
+<div>
+	<p>{{model.description}}</p>
+</div>
+
+<hr/>
+<ul>
+	{{#each galleryItem in model.galleryItems}}
+  		<li>{{galleryItem.title}}</li>
+	{{/each}}
+</ul>
+<hr/>
+
+{{#link-to 'galleries'}} Back {{/link-to}}
