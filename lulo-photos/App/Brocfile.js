@@ -22,7 +22,7 @@ var pickFiles = require('broccoli-static-compiler');
 
 var bootstrapFonts = pickFiles('vendor/bootstrap/dist/fonts', {
     srcDir: '/',
-    destDir: '/fonts'
+    destDir: '/fonts' 
 });
 //module.exports = mergeTrees([app.toTree(), extraAssets]);
 module.exports = mergeTrees([app.toTree(), bootstrapFonts]);
