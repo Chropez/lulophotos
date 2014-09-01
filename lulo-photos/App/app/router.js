@@ -19,9 +19,11 @@ Router.map(function() {
 	});
 	
 	this.route('about');
-	this.route('signin');
-	this.route('component-test');
-	this.route('helper-test');
+  this.route('signin');
+  this.route('application');
+  this.route('account/signup');
+  this.route('galleries/new');
+  this.route('gallery/edit');
 });
 
 

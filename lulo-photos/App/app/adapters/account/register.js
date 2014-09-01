@@ -1,4 +1,6 @@
-import DS from 'ember-data';
+import applicationAdapter from 'app/adapters/application';
 
-export default DS.RESTAdapter.extend({
+
+export default applicationAdapter.extend({
+	
 });

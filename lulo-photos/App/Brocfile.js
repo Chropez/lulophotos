@@ -24,6 +24,15 @@ var bootstrapFonts = pickFiles('vendor/bootstrap/dist/fonts', {
     srcDir: '/',
     destDir: '/fonts' 
 });
+
+
+
+//Jquery file upload
+app.import("vendor/jquery-file-upload/js/vendor/jquery.ui.widget.js");
+app.import("vendor/jquery-file-upload/js/jquery.fileupload.js");
+
+
+
 //module.exports = mergeTrees([app.toTree(), extraAssets]);
 module.exports = mergeTrees([app.toTree(), bootstrapFonts]);
 //module.exports = app.toTree();

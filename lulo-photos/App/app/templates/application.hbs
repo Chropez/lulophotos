@@ -32,9 +32,12 @@
             </p>
           </li>
         {{else}}
-        <li {{action 'login'}}>
-          <a href="#" >Sign In</a>
-        </li>
+        {{#link-to 'signin' href=false tagName="li"}}
+          {{#link-to 'signin' bubbles=false}}
+            Sign In
+          {{/link-to}}  
+
+        {{/link-to}}
 {{!--
           {{#link-to 'login' tagName="li"}}
             <a href="#">Log in</a>

@@ -13,7 +13,7 @@ import Ember from 'ember';
       }
     ´´´
 */
-export default DS.RESTSerializer.extend({
+export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 
 /*  extract: function(store, type, originalPayload, id, requestType){
     console.log("Serializer called: Extract");
@@ -35,13 +35,14 @@ export default DS.RESTSerializer.extend({
      
     return payload; 
   },*/
-
   extractArray: function(store, type, payload) {
     console.log("Serializer called: ExtractArray");
     var newHash = {};
 
     newHash[Ember.String.pluralize(type.typeKey)] = payload;
-    return this._super(store, type, newHash);
+    payload = newHash;
+    var returnObject = this._super(store, type, payload);
+    return returnObject ;
   },
 
   extractSingle: function(store, type, payload, recordId){
@@ -82,7 +83,7 @@ export default DS.RESTSerializer.extend({
    @param {subclass of DS.Model} type   The DS.Model class of the item to be sideloaded
    @param {Object} item JSON object   representing the record to sideload to the payload
   */
-  sideloadItem: function(payload, type, item){
+  /*sideloadItem: function(payload, type, item){
      
     console.log("Serializer called: sideLoadItem"); 
       var sideloadKey = type.typeKey.pluralize(),     // The key for the sideload array 
@@ -109,7 +110,7 @@ export default DS.RESTSerializer.extend({
       sideloadArr.push(item);
       payload[sideloadKey] = sideloadArr;  
       return payload;
-  },
+  },*/
    
   /**
    Extract relationships from the payload and sideload them. This function recursively 
@@ -120,7 +121,7 @@ export default DS.RESTSerializer.extend({
    @paraam {Object} recordJSON   JSON object representing the current record in the payload to look for relationships
    @param {Object} recordType   The DS.Model class of the record object
   */
-  extractRelationships: function(payload, recordJSON, recordType){
+  /*extractRelationships: function(payload, recordJSON, recordType){
     console.log("Serializer called: extractRelationships"); 
     // Loop through each relationship in this record type
     recordType.eachRelationship(function(key, relationship) {
@@ -167,7 +168,7 @@ export default DS.RESTSerializer.extend({
     }, this);
      
     return payload;
-  },
+  },*/
 
 
   /**
