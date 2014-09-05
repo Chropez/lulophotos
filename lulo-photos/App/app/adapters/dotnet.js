@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  namespace: 'api',
+  namespace: 'api', 
 
   pathForType: function(type){
       return type.camelize().capitalize();
@@ -21,3 +21,4 @@ export default DS.RESTAdapter.extend({
     return this._super(store, type, record);
   }
 });
+ 

@@ -16,10 +16,10 @@ Router.map(function() {
 
 	this.resource('account', function(){
 		this.route('signup');
+  		this.route('signin');
 	});
 	
 	this.route('about');
-  this.route('signin');
   this.route('application');
   this.route('account/signup');
   this.route('galleries/new');

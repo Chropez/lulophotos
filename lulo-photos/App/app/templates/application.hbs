@@ -27,13 +27,13 @@
           <li >
             <p class="navbar-text">
               Welcome, 
-              <a href="#">{{session.userInfo.userName}}!</a>
-              | <a href="#" {{action 'logout'}}>Sign Out</a>
+              <a href="#">{{session.userName}}!</a>
+              | <a href="#" {{action 'invalidateSession'}}>Sign Out</a>
             </p>
           </li>
         {{else}}
-        {{#link-to 'signin' href=false tagName="li"}}
-          {{#link-to 'signin' bubbles=false}}
+        {{#link-to 'account.signin' href=false tagName="li"}}
+          {{#link-to 'account.signin' bubbles=false}}
             Sign In
           {{/link-to}}  
 
